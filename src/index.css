@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* login bg  */
+.bgimage{
+  background-image: url(./assets//loginbg.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+/* navbar */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.nav-container-1 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  padding: 12px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  position: static;
+}
+
+nav {
+  border-radius: 50px;
+  padding: 10px;
+  box-shadow: 0 25px 20px -20px rgba(0, 0, 0, 0.4);
+  width: 100%;
+}
+
+nav .menu-btn {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 13px 35px;
+  margin: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #777;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: color 0.5s;
+}
+
+nav ul li::after {
+  content: '';
+  background: #760fcb;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  opacity: 0;
+  transition: top 0.5s, opacity 0.5s;
+}
+
+nav ul li:hover {
+  color: white;
+  text-transform: capitalize;
+}
+
+nav ul li:hover::after {
+  top: 50%;
+  opacity: 1;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  nav .menu-btn {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul.open {
+    display: flex;
+  }
+
+  nav ul li {
+    padding: 10px 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  nav ul li {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+}
+/* navbar ends */
